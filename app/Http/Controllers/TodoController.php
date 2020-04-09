@@ -55,7 +55,8 @@ class TodoController extends Controller
         $input['user_id'] = Auth::id(); 
         // INSERT INTO todos (title) VALUSE ($title);
         $this->todo->fill($input)->save();
-        return redirect()->to('todo');
+        // return redirect()->to('todo');
+        return redirect()->route('todo.index');
     }
 
     /**
