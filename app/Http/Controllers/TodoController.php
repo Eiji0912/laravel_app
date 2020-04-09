@@ -26,10 +26,11 @@ class TodoController extends Controller
     {
         // return view('layouts.app');
         $todos = $this->todo->getByUserId(Auth::id()); 
+        $users = \Auth::user();
         // dd($this->todo->all());
         // dd(compact('todos'), $todos);
         // ['todos' => $todos];
-        return view('todo.index', compact('todos'));  
+        return view('todo.index', compact('todos','users'));  
     }
 
     /**
