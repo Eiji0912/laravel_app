@@ -98,7 +98,8 @@ class TodoController extends Controller
         //UPDATE todos set title = "" where id = id;
         // dd($this->todo->find($id)->fill($input)->save());
         $this->todo->find($id)->fill($input)->save();
-        return redirect()->to('todo');
+        // return redirect()->to('todo');
+        return redirect()->route('todo.index');
     }
 
     /**
@@ -111,6 +112,7 @@ class TodoController extends Controller
     {
         //DELETE from todos where id = $id;
         $this->todo->find($id)->delete();
-        return redirect()->to('todo');
+        // return redirect()->to('todo');
+        return redirect()->route('todo.index');
     }
 }
